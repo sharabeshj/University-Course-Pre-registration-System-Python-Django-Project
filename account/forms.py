@@ -18,6 +18,7 @@ class UserRegistrationForm(forms.ModelForm):
     semester = forms.CharField()
     section = forms.CharField()
     address = forms.CharField()
+    designation = forms.CharField()
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Repeat password', widget=forms.PasswordInput)
 

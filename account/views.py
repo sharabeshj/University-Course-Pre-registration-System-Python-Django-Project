@@ -44,11 +44,12 @@ def register(request):
             semester = user_form.cleaned_data['semester']
             section = user_form.cleaned_data['section']
             sex = user_form.cleaned_data['sex']
+            designation = user_form.cleaned_data['designation']
             # Save the User object
 
             new_user.save()
             # Create the user profile
-            if((user_id[0]=='C' or user_id[0]=='c') and len(user_id)==7 ):
+            if designation == 'student':
                 student_profile = StudentProfile.objects.create(user=new_user,mobile=mobile,email=email,address=address,
                                                                 semester=semester,section=section,sex=sex)
             else:
